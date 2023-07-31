@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AngularPractise';
+   title = "sharing Data"
+
+   currentName = "Devon Conaway"
+
+   users = ['Tauheed Patel', 'Tim Johng Yun', 'Robert Downy Jr']
+
+   addUser(user:any){
+    this.users.push(user)
+   }
+
+   user = {
+    name : 'John Wick',
+    age : 56,
+    country : 'India'
+   }
+
 }

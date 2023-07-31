@@ -1,0 +1,15 @@
+<!--For Sending methods data from Parent to Child we use @Input Decorator in todo.component.ts file-->
+<!-- <p>todo works!</p>
+
+<h3>The name here is {{obj.name}}</h3>
+<h3>The age here is {{obj.age}}</h3>
+<h3>The Country is {{obj.country}}</h3>
+
+<h2>My name is {{name}}</h2> -->
+
+<!--For Sending methods from Child To Parent We will Use @Output Decorator in todo.component.ts file-->
+<input type="text" #user/>
+<button (click)="addUser(user.value); user.value=''">Add User</button>
+
+<!--For Sharing Data Between Sibling Components -->
+<h2> Data from Child here it is Todo-list = {{_todolist}} </h2>
