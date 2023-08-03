@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { TodoListComponent } from '../todo-list/todo-list.component';
+import { TodoService } from '../todo.service';
+import { Todo } from '../dto/todo';
 
 @Component({
   selector: 'app-todo',
@@ -8,8 +10,7 @@ import { TodoListComponent } from '../todo-list/todo-list.component';
 })
 export class TodoComponent implements OnInit {
   
-  // Assuming this as Parent Component for sharing data in BETWEEN COMPONENTS
-  constructor(public _todolist: TodoListComponent) {}
+  constructor(public _todoService : TodoService) {}
 
   @Input() name : any
 
@@ -17,8 +18,13 @@ export class TodoComponent implements OnInit {
 
   @Output() dataEvent = new EventEmitter<string>()
 
+  @Input() names : string = "This is from the Todo Component @Input";
+   
+  // Todo Input Passing data in todos prop
+  @Input() todos : Todo[] = [{status:false, name:"Todo Component"}];
+
   addUser(value:any){
-    this.dataEvent.emit(value)
+    this.dataEvent.emit(value);
   }
 
   ngOnInit(): void {

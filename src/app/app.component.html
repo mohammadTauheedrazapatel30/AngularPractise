@@ -1,7 +1,5 @@
 <h1>This is the Parent Component !</h1>
 
-<ul *ngFor="let user of users">
-     <li>{{user}}</li>
-</ul>
+<app-todo [name]="currentName"></app-todo>
 
-<app-todo [name]="currentName" [obj]="user" (dataEvent)="addUser($event)"></app-todo>
+<app-todo-list></app-todo-list>
