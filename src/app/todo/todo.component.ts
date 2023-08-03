@@ -10,20 +10,14 @@ import { Todo } from '../dto/todo';
 })
 export class TodoComponent implements OnInit {
   
-  constructor(public _todoService : TodoService) {}
-
-  @Input() name : any
-
-  @Input() obj : any
+  constructor() {}
 
   @Output() dataEvent = new EventEmitter<string>()
-
-  @Input() names : string = "This is from the Todo Component @Input";
    
   // Todo Input Passing data in todos prop
   @Input() todos : Todo[] = [{status:false, name:"Todo Component"}];
 
-  addUser(value:any){
+  addUser(value:string){
     this.dataEvent.emit(value);
   }
 

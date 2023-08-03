@@ -11,9 +11,6 @@
 <input type="text" #user/>
 <button (click)="addUser(user.value)">Add User</button>
 
-<!--For Sharing Data Between Sibling Components -->
-<h2> Data from Child here it is Todo-list = {{ names}} </h2>
-
 <ul *ngFor="let todoVar of todos">
   <li><h2>The Array Elements of Todo are {{ todoVar.name }}</h2></li>
   <li><h2>The Array Status Element of Todo is {{ todoVar.status }}</h2></li>

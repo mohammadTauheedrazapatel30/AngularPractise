@@ -1,5 +1,6 @@
 <p>todo-list / For Now its Parent Component!</p>
 
-<p>Data From Todo (Child) in Todo List {{ todoslist }}</p>
+<p>Data From Todo (Child) in Todo List {{ todoslist.length }}</p>
 
-<app-todo [todos]="todoslist"></app-todo>
+<app-todo [todos]="todoslist" (dataEvent)="addTodo($event)"></app-todo>
+
